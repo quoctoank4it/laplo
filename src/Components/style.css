@@ -1,0 +1,47 @@
+/* src/components/Menu.css */
+.menu-container {
+  position: fixed; /* Cố định menu */
+  top: 10px;
+  left: 10px;
+  z-index: 1000; /* Đảm bảo menu nằm trên các thành phần khác */
+}
+
+.circle-button {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(0, 0, 0);
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid white;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 1000; /* Đảm bảo dropdown menu nằm trên các thành phần khác */
+}
+
+.dropdown-menu div {
+  padding: 10px 20px;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+}
+
+.dropdown-menu div:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu div:hover {
+  background-color: #f0f0f0;
+}
