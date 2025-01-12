@@ -67,9 +67,6 @@ function Newest() {
   };
 
   const handleOldest = () => {
-    const sortedImages = [...images].sort((a, b) => a.id - b.id);
-    setRandomizedData(sortedImages);
-    scrollToTop();
     navigate("/oldest");
   };
 
