@@ -110,12 +110,12 @@ function App() {
           maxWidth: 500,
         }}
       >
-        <Menu
+        {/* <Menu
           onRandom={handleRandom}
           onNewest={handleNewest}
           onOldest={handleOldest}
           onFavorite={handleFavorite}
-        />
+        /> */}
         {randomizedData.map(
           (image) =>
             image.src !== "" && (
