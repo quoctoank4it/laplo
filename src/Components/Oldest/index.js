@@ -1,18 +1,11 @@
 import { useEffect, useState } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  useNavigate,
-} from "react-router-dom";
-import "./App.css";
-import icon from "./icon.png";
-import Menu from "./Components/Menu";
-import data from "./data.json";
-import Newest from "./Components/Newest";
-import Oldest from "./Components/Oldest";
+import { BrowserRouter as Router, useNavigate } from "react-router-dom";
+import "../../App.css";
+import icon from "../../icon.png";
+import Menu from "../Menu";
+import data from "../../data.json";
 
-function App() {
+function Oldest() {
   const [isVisible, setIsVisible] = useState(false);
   const [images, setImages] = useState([]);
   const [randomizedData, setRandomizedData] = useState([]);
@@ -26,9 +19,9 @@ function App() {
       src: `https://laplo69.com/images/${fileName}`,
     }));
 
-    setImages(imageArray);
-    const shuffled = [...imageArray].sort(() => Math.random() - 0.5);
-    setRandomizedData(shuffled);
+    const sortedImages = [...imageArray].sort((a, b) => a.id - b.id);
+    setRandomizedData(sortedImages);
+    scrollToTop();
 
     document.addEventListener("contextmenu", (event) => event.preventDefault());
     document.onkeydown = function (e) {
@@ -66,9 +59,7 @@ function App() {
   };
 
   const handleRandom = () => {
-    const shuffled = [...images].sort(() => Math.random() - 0.5);
-    setRandomizedData(shuffled);
-    scrollToTop();
+    navigate("/");
   };
 
   const handleNewest = () => {
@@ -137,16 +128,4 @@ function App() {
   );
 }
 
-function AppRouter() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/newest" element={<Newest />} />
-        <Route path="/oldest" element={<Oldest />} />
-      </Routes>
-    </Router>
-  );
-}
-
-export default AppRouter;
+export default Oldest;
