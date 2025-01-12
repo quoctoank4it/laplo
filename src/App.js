@@ -9,8 +9,6 @@ import "./App.css";
 import icon from "./icon.png";
 import Menu from "./Components/Menu";
 import data from "./data.json";
-import Newest from "./Components/Newest";
-import Oldest from "./Components/Oldest";
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
@@ -72,10 +70,16 @@ function App() {
   };
 
   const handleNewest = () => {
+    const sortedImages = [...images].sort((a, b) => b.id - a.id);
+    setRandomizedData(sortedImages);
+    scrollToTop();
     navigate("/newest");
   };
 
   const handleOldest = () => {
+    const sortedImages = [...images].sort((a, b) => a.id - b.id);
+    setRandomizedData(sortedImages);
+    scrollToTop();
     navigate("/oldest");
   };
 
@@ -142,8 +146,8 @@ function AppRouter() {
     <Router>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/newest" element={<Newest />} />
-        <Route path="/oldest" element={<Oldest />} />
+        <Route path="/newest" element={<App />} />
+        <Route path="/oldest" element={<App />} />
       </Routes>
     </Router>
   );
