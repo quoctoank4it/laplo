@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/laplo/static/css/main.d2ecf7b0.css",
-    "main.js": "/laplo/static/js/main.7ea65ccc.js",
-    "static/js/453.e846c01e.chunk.js": "/laplo/static/js/453.e846c01e.chunk.js",
-    "index.html": "/laplo/index.html",
-    "main.d2ecf7b0.css.map": "/laplo/static/css/main.d2ecf7b0.css.map",
-    "main.7ea65ccc.js.map": "/laplo/static/js/main.7ea65ccc.js.map",
-    "453.e846c01e.chunk.js.map": "/laplo/static/js/453.e846c01e.chunk.js.map"
+    "main.css": "/static/css/main.d2ecf7b0.css",
+    "main.js": "/static/js/main.ab23111b.js",
+    "static/js/453.e846c01e.chunk.js": "/static/js/453.e846c01e.chunk.js",
+    "index.html": "/index.html",
+    "main.d2ecf7b0.css.map": "/static/css/main.d2ecf7b0.css.map",
+    "main.ab23111b.js.map": "/static/js/main.ab23111b.js.map",
+    "453.e846c01e.chunk.js.map": "/static/js/453.e846c01e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d2ecf7b0.css",
-    "static/js/main.7ea65ccc.js"
+    "static/js/main.ab23111b.js"
   ]
 }
