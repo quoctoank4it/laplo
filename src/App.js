@@ -73,14 +73,14 @@ function App() {
     const sortedImages = [...images].sort((a, b) => b.id - a.id);
     setRandomizedData(sortedImages);
     scrollToTop();
-    navigate("/newest");
+    // navigate("/newest");
   };
 
   const handleOldest = () => {
     const sortedImages = [...images].sort((a, b) => a.id - b.id);
     setRandomizedData(sortedImages);
     scrollToTop();
-    navigate("/oldest");
+    // navigate("/oldest");
   };
 
   const handleFavorite = () => {
@@ -110,12 +110,12 @@ function App() {
           maxWidth: 500,
         }}
       >
-        {/* <Menu
+        <Menu
           onRandom={handleRandom}
           onNewest={handleNewest}
           onOldest={handleOldest}
           onFavorite={handleFavorite}
-        /> */}
+        />
         {randomizedData.map(
           (image) =>
             image.src !== "" && (
@@ -146,8 +146,8 @@ function AppRouter() {
     <Router>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/newest" element={<App />} />
-        <Route path="/oldest" element={<App />} />
+        <Route path="/" element={<App />} />
+        <Route path="/" element={<App />} />
       </Routes>
     </Router>
   );
