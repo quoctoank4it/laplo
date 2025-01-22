@@ -88,6 +88,37 @@ function App() {
     // setData(sortedByFavorite);
   };
 
+  const renderImages = () => {
+    return randomizedData.flatMap((image, index) => {
+      const elements = [];
+
+      if (image.src !== "") {
+        elements.push(
+          <img
+            key={image.id}
+            src={image.src}
+            alt={`image-${image.id}`}
+            style={{ width: "100%", maxWidth: 500 }}
+          />
+        );
+      }
+
+      // Thêm đoạn script sau mỗi 2 tấm hình
+      if ((index + 1) % 2 === 0) {
+        elements.push(
+          <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9675988342604441"
+            crossOrigin="anonymous"
+            key={`ad-${index}`}
+          ></script>
+        );
+      }
+
+      return elements;
+    });
+  };
+
   // Add scroll event listener
   window.addEventListener("scroll", handleScroll);
 
@@ -116,17 +147,7 @@ function App() {
           onOldest={handleOldest}
           onFavorite={handleFavorite}
         />
-        {randomizedData.map(
-          (image) =>
-            image.src !== "" && (
-              <img
-                key={image.id}
-                src={image.src}
-                alt="image.id"
-                style={{ width: "100%", maxWidth: 500 }}
-              />
-            )
-        )}
+        {renderImages()}
         {isVisible && (
           <button className="scroll-to-top" onClick={scrollToTop}>
             <img src={icon} style={{ width: 40, height: 40 }}></img>
