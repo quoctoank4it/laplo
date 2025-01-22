@@ -134,9 +134,9 @@ function App() {
         )}
       </div>
 
-      <div className="ads">
+      {/* <div className="ads">
         <span>laplo6969@gmail.com</span>
-      </div>
+      </div> */}
     </div>
   );
 }
