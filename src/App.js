@@ -143,7 +143,7 @@ function App() {
       >
         <Menu
           onRandom={handleRandom}
-          onNewest={handleNewest}
+          onNewest={handleRandom}
           onOldest={handleOldest}
           onFavorite={handleFavorite}
         />
